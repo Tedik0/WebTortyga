@@ -2,9 +2,8 @@ import sqlite3
 from pathlib import Path
 from typing import List
 
-DB_DIR  = Path(__file__).parent / "dbFiles"
-DB_DIR.mkdir(exist_ok=True)
-ADMINS_DB = DB_DIR / "admins.db"
+
+ADMINS_DB = Path(__file__).parent.parent / "dbFiles" / "admins.db"
 
 
 def _connect():

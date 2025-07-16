@@ -142,6 +142,7 @@ def show_filtered_schedule(doc_id, period):
         info=data.get("info", {}),
         doc_id=doc_id,
         uid=uid,  # ← вот это добавь
+        sheets=GOOGLE_SHEETS.keys(),
     )
 
 @app.route("/tickets")
@@ -155,6 +156,19 @@ def show_tickets():
 
     tickets = get_all_tickets()
     return render_template("tickets.html", tickets=tickets, uid=uid)
+
+@app.route("/approve-ticket/<int:ticket_id>", methods=["POST"])
+def approve_ticket_route(ticket_id):
+    uid = request.args.get("uid", type=int)
+    if uid is None or not is_admin(uid):
+        return "Доступ запрещён", 403
+
+    try:
+        from backend.ticket_db import approve_ticket
+        approve_ticket(ticket_id)
+        return redirect(f"/tickets?uid={uid}")
+    except Exception as e:
+        return f"Ошибка: {e }", 500
 
 if __name__ == "__main__":
     # Flask слушает 8080 — как и раньше

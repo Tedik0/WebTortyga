@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-  <a href="/schedule/{{ doc_id }}" class="glass-card" style="margin-bottom:20px">← Назад</a>
+  <a href="/schedule/{{ doc_id }}?uid={{ uid }}" class="glass-card" style="margin-bottom:20px">← Назад</a>
 
   <h2>{{ title }}</h2>
 
@@ -62,8 +62,13 @@
       <label>Кто выходит</label>
       <input type="text" name="name" required>
 
-      <label>С какой точки</label>
-      <input type="text" name="location" required>
+      <label for="location">Выберите точку</label>
+      <select name="location" id="location" required>
+      <option value="" disabled selected hidden>Выберите точку</option>
+        {% for name in sheets %}
+          <option value="{{ name }}">{{ name }}</option>
+        {% endfor %}
+      </select>
 
       <div class="form-actions">
         <button type="submit">Отправить</button>
