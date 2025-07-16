@@ -1,0 +1,97 @@
+/* ——— базовый фон и шрифт ——— */
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:radial-gradient(circle at top,#0f0c29,#302b63,#24243e);
+    min-height:100vh;
+    color:#fff;
+}
+
+/* ——— контейнер для карточек/таблицы ——— */
+.container{
+    margin:40px 0 0;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    width:100%;
+    padding:0 16px;
+    box-sizing:border-box;
+}
+
+/* ——— стеклянная карточка ——— */
+.glass-card{
+    display:block;
+    width:100%;
+    padding:36px 28px;
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(16px);
+    box-shadow:0 6px 24px rgba(0,0,0,.5);
+    border:1px solid rgba(255,255,255,.1);
+    text-decoration:none;
+    color:#fff;
+    transition:transform .25s ease,box-shadow .25s ease;
+    box-sizing:border-box;
+}
+.glass-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+.icon{font-size:36px;margin-bottom:20px}
+h2{margin:0 0 12px;font-size:24px}
+p {margin:0;font-size:16px;line-height:1.4;color:#e0e0e0}
+
+/* ——— стеклянная ТАБЛИЦА ——— */
+.glass-table{
+    width:100%;
+    max-width:800px;
+    border-radius:16px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(14px);
+    box-shadow:0 6px 24px rgba(0,0,0,.5);
+    border:1px solid rgba(255,255,255,.1);
+    overflow:hidden;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th,td{
+    padding:10px 12px;
+    font-size:14px;
+    color:#fff;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+th{
+    background:rgba(255,255,255,.12);
+    font-weight:600;
+}
+tr:last-child td{border-bottom:none}
+
+/* ——— планшеты ——— */
+@media (max-width:768px){
+    .container{padding:0 16px}
+    .glass-card{padding:40px 28px}
+    .icon{font-size:40px}
+    h2{font-size:26px}
+    p {font-size:18px}
+
+    /* таблица чуть крупнее текста */
+    th,td{padding:12px 10px;font-size:15px}
+}
+
+/* ——— телефоны ——— */
+@media (max-width:480px){
+    .container{padding:0 12px}
+    .glass-card{
+        padding:16px 12px;
+        border-radius:16px;
+    }
+    .icon{font-size:22px}
+    h2{font-size:18px}
+    p {font-size:13px}
+
+    /* таблица компактнее, шрифт меньше */
+    th,td{padding:8px 6px;font-size:13px}
+}

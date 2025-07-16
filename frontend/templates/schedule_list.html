@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор магазина</title>
+<link rel="stylesheet" href="/static/schedule_list.css"></head>
+<body>
+<div class = "container">
+    <div class="list_shops">
+      <h2>Выберите магазин</h2>
+      {% for name, doc_id in sheets.items() %}
+        <a class="glass-card" href="/schedule/{{ doc_id }}?uid={{ uid }}">
+          <h3>{{ name }}</h3>
+          <p>Открыть график</p>
+        </a>
+      {% endfor %}
+    </div>
+</div>
+</body>
+</html>

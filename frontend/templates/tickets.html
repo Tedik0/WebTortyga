@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Заявки на изменения</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/?uid={{ uid }}" class="glass-card">← Назад</a>
+
+    <h2>Заявки на изменения графика</h2>
+
+    {% if tickets %}
+      <div class="glass-table">
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Пользователь</th>
+            <th>Дата</th>
+            <th>Кто выходит</th>
+            <th>Локация</th>
+          </tr>
+          {% for t in tickets %}
+            <tr>
+              <td>{{ t[0] }}</td>
+              <td>{{ t[1] }}</td>
+              <td>{{ t[2] }}</td>
+              <td>{{ t[3] }}</td>
+              <td>{{ t[4] }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    {% else %}
+      <p>Заявок пока нет.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

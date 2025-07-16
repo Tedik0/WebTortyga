@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<title>{{ title }}</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+  <a href="/schedule/{{ doc_id }}" class="glass-card" style="margin-bottom:20px">← Назад</a>
+
+  <h2>{{ title }}</h2>
+
+  <div class="table-wrapper">
+    <div class="glass-table">
+      <table>
+        <tr>
+          <th>День</th>
+          {% for c in cols %}<th>{{ c }}</th>{% endfor %}
+        </tr>
+        {% for row in table %}
+          <tr>
+            {% for cell in row %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
+      <div class="glass-card person-info">
+  {% for name in cols if name != "День" and name != "Замены" %}
+    <div class="person">
+      <strong>{{ name }}</strong><br>
+      Телефон: {{ info[name].phone }}<br>
+      Телеграм:
+      {% if info[name].telegram != 'не указано' %}
+        <a href="https://t.me/{{ info[name].telegram | replace('@', '') }}" target="_blank">
+          {{ info[name].telegram }}
+        </a>
+      {% else %}
+        не указано
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+    </div>
+  </div>
+
+<button class="open-form-btn" onclick="openForm()">📬 Подать заявку</button>
+
+<!-- ВСПЛЫВАЮЩАЯ ФОРМА -->
+<div id="formOverlay" class="overlay" onclick="closeForm(event)">
+  <div class="form-popup" onclick="event.stopPropagation()">
+    <form action="/submit-ticket" method="post">
+      <h2>Заявка на изменение</h2>
+
+       <input type="hidden" name="user_id" value="{{ uid }}">
+
+      <label>День</label>
+      <input type="text" name="date" required>
+
+      <label>Кто выходит</label>
+      <input type="text" name="employee" required>
+
+      <label>С какой точки</label>
+      <input type="text" name="location" required>
+
+      <div class="form-actions">
+        <button type="submit">Отправить</button>
+        <button type="button" onclick="closeForm()">Отмена</button>
+      </div>
+    </form>
+  </div>
+</div>
+  <script>
+function openForm() {
+  document.getElementById("formOverlay").style.display = "flex";
+}
+function closeForm(event) {
+  document.getElementById("formOverlay").style.display = "none";
+}
+</script>
+
+</div>
+</body>
+</html>

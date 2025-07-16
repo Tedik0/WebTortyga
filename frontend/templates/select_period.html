@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Выбор периода</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="/schedule" class="glass-card" style="margin-bottom: 20px;">← Назад</a>
+    <h2>Выберите период показа графика</h2>
+
+    <a href="/schedule/{{ doc_id }}/today?uid={{ uid }}" class="glass-card"> Сегодня</a>
+    <a href="/schedule/{{ doc_id }}/tomorrow?uid={{ uid }}" class="glass-card">Завтра</a>
+    <a href="/schedule/{{ doc_id }}/week?uid={{ uid }}" class="glass-card">Неделя</a>
+    <a href="/schedule/{{ doc_id }}/month?uid={{ uid }}" class="glass-card">Месяц</a>
+  </div>
+</body>
+</html>

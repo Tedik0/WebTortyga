@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "digital-equator-465207-j1",
+  "private_key_id": "eaf6c3e5dd3e11341b20840e43298d44466a6492",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCNgT7iqRiO0AO8\nT7xdcAOZGcEE7POr8TYrp3qDLyyPVFdAZ3y4e8JYnQq1QQcl5RQ01AgDTOylrBHZ\nHQGJtXsbjHjlJD0X+r39G2fQMIvzkwAFe/pf/CXY/pN7Qc0UV56DyOhI+SI0CxXT\nweEHzSCNkykjFmmLi0F3t4o9tp9YLxaJdIkjSjxHuGJ9BWueoSv5L106OrzhgzwX\niB+kFDZsjILyLLEcsm+TFCfPc1sCNoUrHhqs4VTZd6XscHsFMLQV5lvVyklQAYTI\nHvd5p3U38gWHGOf4isghjqfh1MIepW5mUJyEH4qDw0f47MXob5LuUL0KMoeQjEzq\ny2AA/RHLAgMBAAECggEALXDLNnNRwQ64nGDInwLJDQGxs7i52UXY/PTHyVe9Sfuu\nFy8EZKPNebJYjXMn7fnd3scWGaU6u0sB4kRHyaafNW4LJp5YBhrNpvmFgVwNnTbg\nA2LYOLmal8/MoYC0cCtg6nX6bfCfFLJYnIs+jchIA162D5/zXc3mxKCKgp3iFqly\nIxpq1NjsE/EP2H0eDTd55xy/NhglK7kBMDIhK8kf8RpuQDKQGSk2ndmYH30mxQwT\nagxpqFQeIRbmdsCEDm7hJdpBIoR83Xw58NxdEUXyZxAqKdss8LKscidDvLWbb7SP\nlQSmdpNqpa9DRVpJrFDE1rw4UZMzkvic6my4dAqprQKBgQDBzq3RcMC8GAV3XA8+\ni6oR+jhDRSCACHe1RZhhbmrtwCdKTDJdwVxI06fANQBHe5PD2PvZE1gvT9WbG7uU\nrX6grOqjyn0yKUt9rc+I6/WHU69VidvL3BVF4q5h8za0o04KO9Jm9UNIRBd7keI1\n7hC+d2wz4qz6KtZY8Jc19bvOzQKBgQC66efMduSyMEf0s4idBDQoa+lPNsEF1lL/\nfeWU3WODiGc/lh/Jmfpbhu/R8nc7trjv2NqCf5xS6dIF4X/cRwHY3hBqlGhTy7da\nwq0e617pv+g+lTaOSo22r+7UMRovjLlTwv9yd5X3OBy38Oify9M7jJlP6ym/dnVe\nd7rRAvay9wKBgFbVNhWXkhL0JEbVLVNVmg5R8LFbIHOc152VH+/PXANHy5LDTvGo\nt6M9iXRZitV8Lbla14Pr4d/YwhirtUCo9wogT0SxbaRy0gruPATZy3klanJFwP+2\njKVyKbVjFgia/lUhdmSA0PNo5qiLtTF6h2/+67DXh67SUJUqvmUDw3ClAoGAVLvh\nF3H2r0jv9eDF19imBIUXGZAK5SiKK8TZJSlQCbr2g379Hhmtw3xij9zJbMqjAChg\ntrQ/G99gFMZrfmK6VaQl8QsiWIqLrpt+e/vb5T/YezaNquflYqJTNOKlqlSzV2OZ\nBj1sQMyxSDnwWzC9q8tLXU2QeXmsL407pbEgQXUCgYAeNfNl+6VZd4azM4cPyYhk\n/nWE/qaC3PpAR+1TNX+cFfhI+vkbJn89+kjGb+sVKvnqXuGlteLfKtGYWEBdPAgz\nWzm8Yay7vRcd8WLzYTQFthk6VUnro0BJuvcOveY7HZzAkBU1xOOPF2Rkme/r1KQZ\n4BI6cQ9dm9K949/98q0iWQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "amoraltortyga@digital-equator-465207-j1.iam.gserviceaccount.com",
+  "client_id": "111659733514001788706",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/amoraltortyga%40digital-equator-465207-j1.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

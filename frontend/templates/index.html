@@ -1,0 +1,17 @@
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    const tg = window.Telegram.WebApp;
+    const uid = tg.initDataUnsafe?.user?.id;
+
+    fetch("/api/whoami", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({uid})
+    })
+    .then(r => r.json())
+    .then(d => {
+        location.href = d.role === "admin"
+            ? `/admin?uid=${uid}`
+            : `/user?uid=${uid}`;
+    });
+</script>

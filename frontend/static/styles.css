@@ -1,0 +1,393 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.glass-card {
+    display: block;
+    padding: 36px 28px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+}
+
+p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .glass-card {
+        padding: 40px 28px;
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .glass-card {
+        width: 100%;
+        padding: 16px 10px;
+        border-radius: 16px;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.glass-table {
+    width: 100%;
+    max-width: 800px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th, td {
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .glass-card {
+        padding: 16px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 6px 4px;
+        font-size: 10px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .glass-card {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+}
+
+.staff-info {
+    margin-top: 24px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    font-size: 14px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.staff-info h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.staff-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.staff-info li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.person-info {
+  margin-top: 20px;
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.person-info .person {
+  margin-bottom: 18px;
+}
+
+.person-info strong {
+  font-size: 16px;
+  color: #fff;
+}
+
+.person-info a {
+  color: #7ecdf3;
+  text-decoration: none;
+}
+
+.person-info a:hover {
+  text-decoration: underline;
+}
+.ticket-box {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.ticket-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.ticket-form {
+    margin-top: 20px;
+    padding: 24px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
+
+.ticket-form h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.ticket-form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ticket-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.ticket-form input::placeholder {
+    color: #ccc;
+}
+
+.glass-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.glass-button:hover {
+    transform: scale(0.97);
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Кнопка */
+.open-form-btn {
+  background: linear-gradient(135deg, #f34079 40%, #fc894d);
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  align-self: center;
+  transition: transform 0.2s ease;
+}
+.open-form-btn:hover {
+  transform: scale(0.97);
+}
+
+/* Задний фон */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Всплывающее окно */
+.form-popup {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border-radius: 16px;
+  padding: 24px 32px;
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+}
+
+/* Элементы формы */
+.form-popup h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.form-popup label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-popup input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Кнопки */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #f34079;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.form-actions button:hover {
+  opacity: 0.85;
+}
