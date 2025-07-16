@@ -12,7 +12,7 @@ app = Flask(__name__,
             template_folder="templates",
             static_folder="static")
 
-TICKET_DB = Path(__file__).parent / "dbFiles" / "tickets.db"
+TICKET_DB = Path(__file__).parent.parent / "dbFiles" / "tickets.db"
 
 MONTH_RU = {
     1:"Январь",2:"Февраль",3:"Март",4:"Апрель",
@@ -82,9 +82,12 @@ def submit_ticket():
     date     = request.form.get("date")
     name     = request.form.get("name")
     location = request.form.get("location")
+    print("FORM DATA:", request.form.to_dict())
 
     if not all([user_id, date, name, location]):
+        print("FORM DATA:", request.form.to_dict())
         return "Не все поля заполнены", 400
+
 
     with sqlite3.connect(TICKET_DB) as conn:
         conn.execute("""

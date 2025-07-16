@@ -2,7 +2,7 @@ import sqlite3
 from pathlib import Path
 from typing import List, Tuple
 
-TICKET_DB = Path(__file__).parent / "dbFiles" / "tickets.db"
+TICKET_DB = Path(__file__).parent.parent / "dbFiles" / "tickets.db"
 
 def init_ticket_db():
     TICKET_DB.parent.mkdir(exist_ok=True)  # создаём папку dbFiles если нет

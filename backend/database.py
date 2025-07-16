@@ -1,10 +1,7 @@
 from pathlib import Path
 import sqlite3
 
-DB_DIR = Path(__file__).parent / "dbFiles"
-DB_DIR.mkdir(exist_ok=True)
-
-DB_PATH = DB_DIR / "users.db"          # <— единый путь
+DB_PATH = Path(__file__).parent.parent / "dbFiles" / "users.db"  # ← добавили .parent
 
 def add_user(user_id: int):
     with sqlite3.connect(DB_PATH) as conn:
