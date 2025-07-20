@@ -12,34 +12,44 @@
 
     <h2>Заявки на изменения графика</h2>
 
+
     {% if tickets %}
-      <div class="glass-table">
+      <div class="glass-table responsive-table">
         <table>
-          <tr>
-            <th>ID</th>
-            <th>Пользователь</th>
-            <th>Дата</th>
-            <th>Кто выходит</th>
-            <th>Локация</th>
-            <th>Действие</th> <!-- новая колонка -->
-          </tr>
-          {% for t in tickets %}
+          <thead>
             <tr>
-              <td>{{ t[0] }}</td>
-              <td>{{ t[1] }}</td>
-              <td>{{ t[2] }}</td>
-              <td>{{ t[3] }}</td>
-              <td>{{ t[4] }}</td>
-              <td style="display: flex; gap: 10px; justify-content: center;">
-                  <form action="/approve-ticket/{{ t[0] }}?uid={{ uid }}" method="post">
-                    <button type="submit" class="btn-accept">✅ Принять</button>
-                  </form>
-                  <form action="/reject-ticket/{{ t[0] }}?uid={{ uid }}" method="post">
-                    <button type="submit" class="btn-reject">❌ Отклонить</button>
-                  </form>
-              </td>
+              <th>ID</th>
+              <th>Пользователь</th>
+              <th>Дата</th>
+              <th>Кто выходит</th>
+              <th>Локация</th>
             </tr>
-          {% endfor %}
+          </thead>
+          <tbody>
+            {% for t in tickets %}
+              <tr>
+                <td>{{ t[0] }}</td>
+                <td>{{ t[1] }}</td>
+                <td>{{ t[2] }}</td>
+                <td>{{ t[3] }}</td>
+                <td>{{ t[4] }}</td>
+              </tr>
+              <tr>
+                <td colspan="5">
+                  <div class="ticket-actions">
+                    <form method="post" action="/accept-ticket">
+                      <input type="hidden" name="ticket_id" value="{{ t[0] }}">
+                      <button type="submit" class="glass-button success">✅ Принять</button>
+                    </form>
+                    <form method="post" action="/reject-ticket">
+                      <input type="hidden" name="ticket_id" value="{{ t[0] }}">
+                      <button type="submit" class="glass-button red">❌ Отклонить</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
         </table>
       </div>
     {% else %}

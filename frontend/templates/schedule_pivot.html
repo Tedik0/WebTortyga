@@ -54,7 +54,8 @@
     <form action="/submit-ticket" method="post">
       <h2>Заявка на изменение</h2>
 
-       <input type="hidden" name="user_id" value="{{ uid }}">
+      <input type="hidden" name="user_id" value="{{ uid }}">
+      <input type="hidden" name="doc_id" value="{{ doc_id }}">
 
       <label>День</label>
       <input type="text" name="date" required>

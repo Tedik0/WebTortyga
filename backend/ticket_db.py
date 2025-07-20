@@ -18,11 +18,12 @@ def init_ticket_db():
     with sqlite3.connect(TICKET_DB) as conn:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS tickets (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                user_id INTEGER NOT NULL,
-                date TEXT NOT NULL,
-                name TEXT NOT NULL,
-                location TEXT NOT NULL
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            date TEXT,
+            name TEXT,
+            location TEXT,
+            doc_id TEXT
             )
         """)
 

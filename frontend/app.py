@@ -82,20 +82,18 @@ def submit_ticket():
     date     = request.form.get("date")
     name     = request.form.get("name")
     location = request.form.get("location")
-    print("FORM DATA:", request.form.to_dict())
+    doc_id   = request.form.get("doc_id")  # ← добавлено
 
-    if not all([user_id, date, name, location]):
-        print("FORM DATA:", request.form.to_dict())
+    if not all([user_id, date, name, location, doc_id]):
         return "Не все поля заполнены", 400
-
 
     with sqlite3.connect(TICKET_DB) as conn:
         conn.execute("""
-            INSERT INTO tickets (user_id, date, name, location)
-            VALUES (?, ?, ?, ?)
-        """, (user_id, date, name, location))
+            INSERT INTO tickets (user_id, date, name, location, doc_id)
+            VALUES (?, ?, ?, ?, ?)
+        """, (user_id, date, name, location, doc_id))
 
-    return redirect(f"/schedule?uid={user_id}")
+    return redirect(f"/schedule/{doc_id}?uid={user_id}")
 
 
 
@@ -155,7 +153,7 @@ def show_tickets():
         return "Доступ только для администраторов", 403
 
     tickets = get_all_tickets()
-    return render_template("tickets.html", tickets=tickets, uid=uid)
+    return render_template("tickets.html", tickets=tickets, uid=uid, sheets=GOOGLE_SHEETS)
 
 @app.route("/approve-ticket/<int:ticket_id>", methods=["POST"])
 def approve_ticket_route(ticket_id):

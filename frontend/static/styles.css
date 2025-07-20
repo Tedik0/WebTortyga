@@ -446,3 +446,95 @@ select option {
   background: #1e1e2f;
   color: #fff;
 }
+.glass-button.red {
+  background: rgba(255, 70, 70, 0.2);
+  border: 1px solid rgba(255, 70, 70, 0.4);
+  color: #ff4a4a;
+}
+
+.glass-button.red:hover {
+  background: rgba(255, 70, 70, 0.35);
+}
+.glass-button.success {
+  background: linear-gradient(135deg, #00c57a, #00e48a);
+  color: white;
+  font-weight: bold;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.glass-button.success:hover {
+  filter: brightness(1.1);
+}
+/* Убедись, что таблица красиво адаптируется */
+.responsive-table {
+  overflow-x: auto;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.responsive-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 10px 12px;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+}
+
+/* Кнопки под таблицей */
+.ticket-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+/* Стили для кнопок */
+.glass-button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+/* Принять — зелёная кнопка */
+.glass-button.success {
+  background: linear-gradient(135deg, #00c66b, #1bcc81);
+  color: white;
+}
+
+/* Отклонить — красная кнопка */
+.glass-button.red {
+  background: linear-gradient(135deg, #ff4e50, #f35b5b);
+  color: white;
+}
+
+/* Responsive — на маленьких экранах убираем фикс ширины */
+@media (max-width: 600px) {
+  .responsive-table table {
+    min-width: unset;
+  }
+
+  .glass-button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
